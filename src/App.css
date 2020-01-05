@@ -1,31 +1,50 @@
 .App {
   text-align: center;
 }
+
+.center{
+  display: flex;
+  justify-content: center;
+}
 nav {
-  background-color: rgb(4, 174, 117);
+  background: rgba(208, 5, 5, 0.872);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   min-height: 10vh;
+  overflow: hidden;
+  font-family: fantasy;
 }
 
  .nav-links{
   display: flex;
   align-items: center;
    color: white;
-   padding: 10px;
    text-decoration: none;
    font-size: large;
    
-
  }
  .nav-links :hover{
-color: rgb(182, 132, 4);
+color: rgb(255, 203, 71);
 font-size: larger;
 transition: all .2s ease-in-out
 
  }
 
+ .logo{
+   font-size: 5vh;
+  font-weight: 900;
+ }
+
+ .form {
+   width: 700px;
+   background:
+   linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+   linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+   background-color:#708090;
+   background-size: 64px 128px;   
+ }
+ 
 
 
 

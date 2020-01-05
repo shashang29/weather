@@ -5,9 +5,9 @@ import React from 'react';
 
 const Nav = () => {
     return (
-        <nav>
-            <Link to='/' className='nav-links'>
-                <div className='logo'>LOGO</div>
+        <nav className='shadow-3'>
+            <Link to='/' className='logo nav-links'>
+                <div>WEATHER</div>
             </Link>
             <Link to='/weathermap' className='nav-links'>
                 <div>Map</div>
