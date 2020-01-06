@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+
 
 const SearchBox = () => {
+
+    useEffect(() => {
+        fetchWeather();
+    }, []);
+
+
+
+    const fetchWeather = async () => {
+        const data = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=fb07371e9e8f6a6c53f85498e92dcea1');
+
+        const response = await data.json();
+        console.log(response.main);
+    }
     return (
         <div>
             <h1>Search the weather</h1>

@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import SearchBox from './components/SearchBox';
 import WeatherMap from './components/WeatherMap';
 import About from './components/About';
+
 function App() {
     return (
         <Router>
