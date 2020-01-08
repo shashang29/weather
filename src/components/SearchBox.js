@@ -37,7 +37,7 @@ const SearchBox = () => {
 
     return (
         <div>
-            <h1>Search the weather</h1>
+            <h1 className='mt5'>Search the weather</h1>
             <div className='center'>
                 <div className='center form pa5 br2 shadow-3'>
                     <input
