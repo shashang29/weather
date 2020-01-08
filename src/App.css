@@ -13,7 +13,7 @@ nav {
   align-items: center;
   height: 10vh;
   overflow: hidden;
-  font-family: fantasy;
+  
 }
 
  .nav-links{
@@ -47,10 +47,14 @@ transition: all .2s ease-in-out
  
 .weather-box{
   width: 700px;
+    
 }
-.error{
-  position:relative;
-  top: -80px;
+
+
+.weather-box p{
+  background-color: black;
+  padding: 5px;
+  margin: 12px;
 }
 
 
