@@ -41,6 +41,11 @@ const SearchBox = () => {
             <div className='center'>
                 <div className='center form pa5 br2 shadow-3'>
                     <input
+                        onKeyPress={event => {
+                            if (event.key === 'Enter') {
+                                onSearch();
+                            }
+                        }}
                         onChange={(event => setInput(event.target.value))}
                         type='text'
                         value={input} placeholder='Type your location'
@@ -49,11 +54,11 @@ const SearchBox = () => {
                         onClick={onSearch}> Search
                     </button>
                 </div>
-                
+
             </div>
-            {(weatherData) ? <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} /> 
+            {(weatherData) ? <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
                 : <></>
-                }
+            }
 
         </div>
 

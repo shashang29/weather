@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
+
+//components
 import Nav from './components/Nav';
 import SearchBox from './components/SearchBox';
 import WeatherMap from './components/WeatherMap';

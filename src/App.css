@@ -15,6 +15,14 @@ nav {
   overflow: hidden;
   
 }
+.particles{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom: 0;
+  left:0;
+  z-index: -1;
+}
 
  .nav-links{
   display: flex;
@@ -50,7 +58,7 @@ transition: all .2s ease-in-out
   display: flex;
   justify-content: space-evenly;
   background-color: rgba(247, 1, 1, 0.44);
-    
+    margin-bottom: 20px;
 }
 
 
