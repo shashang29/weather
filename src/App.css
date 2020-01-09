@@ -59,4 +59,7 @@ transition: all .2s ease-in-out
   margin: 12px;
 }
 
-
+.map{
+  height: 80vh;
+  width: 80vw;
+}
