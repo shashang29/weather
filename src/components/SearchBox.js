@@ -11,7 +11,7 @@ const SearchBox = () => {
 
     const onSearch = () => {
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=fb07371e9e8f6a6c53f85498e92dcea1`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=fb07371e9e8f6a6c53f85498e92dcea1`)
             .catch(err => console.log(err))
             .then(response => {
                 if (!response.ok) {

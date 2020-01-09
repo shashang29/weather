@@ -15,10 +15,10 @@ const WeatherInformation = ({ imageUrl, weatherData }) => {
                 <div className='center weather-box'>
                     <img className='bg-black ma3 mr2' src={imageUrl} alt='' height='180px' width='180px' />
                     <div className=' mt1'>
-                        <p>Temperature: {parseFloat((weatherData.main.temp - 273.15)).toFixed(1)} °C</p>
-                        <p>Feels like: {parseFloat((weatherData.main.feels_like - 273.15)).toFixed(1)} °C</p>
-                        <p>Min: {parseFloat((weatherData.main.temp_min - 273.15)).toFixed(1)} °C</p>
-                        <p>Max: {parseFloat((weatherData.main.temp_max - 273.15)).toFixed(1)} °C</p>
+                        <p>Temperature: {(weatherData.main.temp)} °C</p>
+                        <p>Feels like: {(weatherData.main.feels_like)} °C</p>
+                        <p>Min: {(weatherData.main.temp_min)} °C</p>
+                        <p>Max: {(weatherData.main.temp_max)} °C</p>
                     </div>
                 </div>
             </div>
