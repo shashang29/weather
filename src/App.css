@@ -63,3 +63,8 @@ transition: all .2s ease-in-out
   height: 80vh;
   width: 80vw;
 }
+
+.about-box{
+  background-color: rgba(1, 14, 38, 0.693);
+
+}
