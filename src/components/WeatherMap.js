@@ -17,18 +17,23 @@ const WeatherMap = () => {
                 placeholder='Select an option' className='f4 tc pt1'
                 onChange={handleChange}
             />
-            <datalist id='options'><option value='Temperature'></option></datalist>
+            <datalist id='options'><option  >Temperature</option></datalist>
             <Map className='map center mt5' center={position} zoom={2}  >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
 
                 />
-                <TileLayer
+
+                {(displayMap)? <TileLayer
                     url="https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?&appid=fb07371e9e8f6a6c53f85498e92dcea1"
 
 
-                />
+                />:
+                null
+
+                }
+               
                 <Marker position={position}>
                     <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
                 </Marker>
