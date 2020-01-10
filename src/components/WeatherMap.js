@@ -8,6 +8,10 @@ const WeatherMap = () => {
     const position = [28.505, 84.12];
 
     return (
+        <div>
+        <h2>Displaying map for:</h2>
+        <input list='options'/>
+        <datalist id='options'><option value='temperature'></option></datalist>
         <Map className='map center mt5' center={position} zoom={2}  >
         <TileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -23,6 +27,7 @@ const WeatherMap = () => {
           <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
         </Marker>
       </Map>
+      </div>
     )
 }
 
