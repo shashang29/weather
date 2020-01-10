@@ -15,16 +15,13 @@ const WeatherMap = () => {
             <h2>Displaying map for:</h2>
             <div className='center'>
 
-                <select id="types" className="w-20 h2 f5 " onChange={handleChange}>
+                <select id="types" className="pa5 h2 f5" onChange={handleChange}>
                     <option value="">Select a map</option>
                     <option label="Temperature" value="temp_new" />
-                    <option label="Photography" value="12">Space Type</option>
-                    <option label="Film" value="22">Space Type</option>
-                    <option label="Visual Art" value="32">Space Type</option>
-                    <option label="Performance" value="42">Space Type</option>
-                    <option label="Workshop" value="52">Space Type</option>
-                    <option label="Event" value="62">Space Type</option>
-                    <option label="Co-Working" value="72">Space Type</option>
+                    <option label="Clouds" value="clouds_new">Space Type</option>
+                    <option label="Percipitation" value="precipitation_new">Space Type</option>
+                    <option label="Sea level pressure" value="pressure_new">Space Type</option>
+                    <option label="Wind speed" value="wind_new">Space Type</option>
                 </select>
 
             </div>
