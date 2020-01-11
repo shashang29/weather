@@ -31,11 +31,11 @@ const WeatherMap = () => {
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
 
                 />
-                {(displayMap) ?
+                {displayMap &&
                     <TileLayer
                         url={`https://tile.openweathermap.org/map/${displayMap}/{z}/{x}/{y}.png?&appid=fb07371e9e8f6a6c53f85498e92dcea1`}
                     />
-                    : <></>
+        
                 }
             </Map>
         </div>

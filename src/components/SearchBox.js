@@ -6,7 +6,7 @@ const SearchBox = () => {
 
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [weatherData, setWeatherData] = useState();
+    const [weatherData, setWeatherData] = useState('');
 
 
     const onSearch = () => {
@@ -56,8 +56,10 @@ const SearchBox = () => {
                 </div>
 
             </div>
-            {(weatherData) ? <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
-                : <></>
+            {weatherData &&
+
+             <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
+                
             }
 
         </div>
