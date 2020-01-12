@@ -24,14 +24,13 @@ const SearchBox = () => {
             })
             .catch(err => console.log(err))
             .then(response => {
+        
                 const weatherData = response;
-                setPending('success');
                 setWeatherData(response);
+                setPending('success');
 
                 const imageUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
                 setImageUrl(imageUrl);
-                console.log(weatherData)
-                console.log(imageUrl);
             }).catch(err => console.log(err))
     }
 
@@ -61,7 +60,7 @@ const SearchBox = () => {
             {pending === true ? <h1>Loading...</h1>
             : pending === 'success'? 
             <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
-            : 
+            : <></>
 
             }
 
