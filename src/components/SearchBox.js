@@ -7,10 +7,11 @@ const SearchBox = () => {
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [weatherData, setWeatherData] = useState('');
+    const [pending, setPending] = useState(false);
 
 
     const onSearch = () => {
-
+        setPending(true);
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=fb07371e9e8f6a6c53f85498e92dcea1`)
             .catch(err => console.log(err))
             .then(response => {
@@ -24,6 +25,7 @@ const SearchBox = () => {
             .catch(err => console.log(err))
             .then(response => {
                 const weatherData = response;
+                setPending('success');
                 setWeatherData(response);
 
                 const imageUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
@@ -56,10 +58,11 @@ const SearchBox = () => {
                 </div>
 
             </div>
-            {weatherData &&
+            {pending === true ? <h1>Loading...</h1>
+            : pending === 'success'? 
+            <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
+            : 
 
-             <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
-                
             }
 
         </div>
