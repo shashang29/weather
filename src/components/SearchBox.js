@@ -7,16 +7,18 @@ const SearchBox = () => {
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [weatherData, setWeatherData] = useState('');
-    const [request, setRequest] = useState({pending: false, 
-        error: false});
+    const [request, setRequest] = useState({
+        pending: false,
+        error: false
+    });
 
 
     const onSearch = () => {
         if (input === '') {
-            setRequest({error:'Location is required'})
+            setRequest({ error: 'Location is required' })
         }
         else {
-            setRequest({pending:true});
+            setRequest({ pending: true });
             fetch('http://localhost:3001/api', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
@@ -25,16 +27,23 @@ const SearchBox = () => {
                 })
             })
                 .catch(err => console.log(err))
-                .then(response => response.json())
-                .catch(err => console.log(err))
+                .then(response=>{
+                    if (!response.ok) {
+                        return (
+                            alert("Something went wrong. Please try again"))
+                    } else {
+                        return response.json()
+                        
+                    }
+                })
                 .then(response => {
                     if (response.message) {
-                        setRequest({error: response.message})
+                        setRequest({ error: response.message })
                     }
                     else {
                         const weatherData = response;
                         setWeatherData(response);
-                        setPending('success');
+                        setRequest({ pending: 'success' });
 
                         const imageUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
                         setImageUrl(imageUrl);
@@ -48,7 +57,7 @@ const SearchBox = () => {
     return (
         <div>
             <h1 className='mt5'>Search the weather</h1>
-            <div className='center'>
+            <div className='center '>
                 <h2 className="absolute black">{request.error}</h2>
                 <div className='center form pa5 br2 shadow-3'>
                     <input
@@ -62,10 +71,10 @@ const SearchBox = () => {
                         value={input} placeholder='Type your location'
                         className='pa3 f4 w-70 h-100' />
                     <button className='tc pa3 grow f4 w-30 link bg-black white pointer' onClick={onSearch}>Search</button>
-                   </div>
+                </div>
             </div>
-            {pending === true ? <h1>Loading...</h1>
-                : pending === 'success' ?
+            {request.pending === true ? <h1>Loading...</h1>
+                : request.pending === 'success' ?
                     <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
                     : <></>
 
