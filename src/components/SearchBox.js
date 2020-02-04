@@ -8,9 +8,13 @@ const SearchBox = () => {
     const [imageUrl, setImageUrl] = useState('');
     const [weatherData, setWeatherData] = useState('');
     const [pending, setPending] = useState(false);
-
+    const[error, setError]= useState('') 
 
     const onSearch = () => {
+        if(input===''){
+            setError('Location is required')
+        }
+        else{
         setPending(true);
         fetch('http://localhost:3001/api', {
             method: 'post',
@@ -40,6 +44,7 @@ const SearchBox = () => {
                 setImageUrl(imageUrl);
             }).catch(err => console.log(err))
     }
+}
 
 
 
@@ -47,6 +52,7 @@ const SearchBox = () => {
         <div>
             <h1 className='mt5'>Search the weather</h1>
             <div className='center'>
+            <h2 className="absolute black">{error}</h2>
                 <div className='center form pa5 br2 shadow-3'>
                     <input
                         onKeyPress={event => {
@@ -58,11 +64,9 @@ const SearchBox = () => {
                         type='text'
                         value={input} placeholder='Type your location'
                         className='pa3 f4 w-70' />
-                    <button className='pa3 grow f4 w-30 link bg-black white'
-                        onClick={onSearch}> Search
-                    </button>
+                    <button className='tc pa3 grow f4 w-30 link bg-black white pointer' onClick={onSearch}>Search</button>
+                     <h2 className="absolute">hello</h2>
                 </div>
-
             </div>
             {pending === true ? <h1>Loading...</h1>
                 : pending === 'success' ?
