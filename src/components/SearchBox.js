@@ -12,7 +12,13 @@ const SearchBox = () => {
 
     const onSearch = () => {
         setPending(true);
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=fb07371e9e8f6a6c53f85498e92dcea1`)
+        fetch('http://localhost:3001/api', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              input: input
+            })
+        })
             .catch(err => console.log(err))
             .then(response => {
                 if (!response.ok) {
@@ -20,11 +26,12 @@ const SearchBox = () => {
                         alert("Could not find your location. Try again"))
                 } else {
                     return response.json()
+                    
                 }
             })
             .catch(err => console.log(err))
             .then(response => {
-        
+
                 const weatherData = response;
                 setWeatherData(response);
                 setPending('success');
@@ -58,9 +65,9 @@ const SearchBox = () => {
 
             </div>
             {pending === true ? <h1>Loading...</h1>
-            : pending === 'success'? 
-            <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
-            : <></>
+                : pending === 'success' ?
+                    <WeatherInformation imageUrl={imageUrl} weatherData={weatherData} />
+                    : <></>
 
             }
 
