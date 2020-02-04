@@ -8,15 +8,15 @@ const SearchBox = () => {
     const [imageUrl, setImageUrl] = useState('');
     const [weatherData, setWeatherData] = useState('');
     const [request, setRequest] = useState({pending: false, 
-        error:});
+        error: false});
 
 
     const onSearch = () => {
         if (input === '') {
-            setError('Location is required')
+            setRequest({error:'Location is required'})
         }
         else {
-            setPending(true);
+            setRequest({pending:true});
             fetch('http://localhost:3001/api', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
@@ -29,7 +29,7 @@ const SearchBox = () => {
                 .catch(err => console.log(err))
                 .then(response => {
                     if (response.message) {
-                        setError(response.message)
+                        setRequest({error: response.message})
                     }
                     else {
                         const weatherData = response;
@@ -49,7 +49,7 @@ const SearchBox = () => {
         <div>
             <h1 className='mt5'>Search the weather</h1>
             <div className='center'>
-                <h2 className="absolute black">{error}</h2>
+                <h2 className="absolute black">{request.error}</h2>
                 <div className='center form pa5 br2 shadow-3'>
                     <input
                         onKeyPress={event => {
