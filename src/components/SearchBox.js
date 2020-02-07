@@ -19,7 +19,7 @@ const SearchBox = () => {
         }
         else {
             setRequest({ pending: true });
-            fetch('http://localhost:3001/api', {
+            fetch('https://cryptic-reef-62953.herokuapp.com/api', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
