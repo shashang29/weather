@@ -2,49 +2,59 @@
   text-align: center;
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
 }
+
 nav {
   background: rgba(208, 5, 5, 0.872);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 10vh;
+  height: 70px;
   overflow: hidden;
-  
 }
- .nav-links{
+
+.nav-links {
   display: flex;
   align-items: center;
-   color: white;
-   text-decoration: none;
-   font-size: large;
-   
- }
- .nav-links :hover{
-color: rgb(255, 203, 71);
-font-size: larger;
-transition: all .2s ease-in-out
+  color: white;
+  text-decoration: none;
+  font-size: large;
+}
 
- }
+.nav-links :hover {
+  color: rgb(255, 203, 71);
+  font-size: larger;
+  transition: all .2s ease-in-out
+}
 
- .logo{
-   font-size: 5vh;
+.logo {
+  font-size: 30px;
   font-weight: 900;
- }
+  margin-top: 5px;
+}
 
- .form {
-   width: 700px;
-   background:
-   linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-   linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-   background-color:#708090;
-   background-size: 64px 128px;   
- }
- 
-.weather-box{
+.form {
+  width: 700px;
+  background: linear-gradient(135deg, #00000000 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px), linear-gradient(225deg, #010104d4 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+  background-color: #010104d4;
+  background-size: 64px 128px;
+}
+.form{
+  position: relative;
+}
+#error{
+  position: absolute;
+  color:red;  
+  top: 15px;
+}
+.weather-box-container {
+  background-color: rgba(1, 14, 38, 0.693);
+}
+
+.weather-box {
   width: 700px;
   display: flex;
   justify-content: space-evenly;
@@ -52,19 +62,38 @@ transition: all .2s ease-in-out
   margin-bottom: 20px;
 }
 
-
-.weather-box p{
+.weather-box p {
   background-color: rgba(0, 0, 0, 0.83);
   padding: 10px;
   margin: 12px;
 }
 
-.map{
+.map {
   height: 80vh;
   width: 80vw;
 }
 
-.about-box{
+.about-box {
   background-color: rgba(1, 14, 38, 0.693);
+}
 
+@media only screen and (max-width:700px) {
+  .about-box p {
+    font-size: 25px;
+  }
+  .about-box h1 {
+    font-size: 35px;
+  }
+  nav {
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .about-box p {
+    font-size: 20px;
+  }
+  nav {
+    height: 50px;
+  }
 }

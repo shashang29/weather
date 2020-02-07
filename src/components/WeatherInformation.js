@@ -6,7 +6,7 @@ import React from 'react';
 const WeatherInformation = ({ imageUrl, weatherData }) => {
 
     return (
-        <div>
+        <div className="mt3 ">
             <h2 className='center'>
             Weather today for {weatherData.name}, {weatherData.sys.country}:</h2>
             <strong className='f2'>{weatherData.weather[0].main}</strong>

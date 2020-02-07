@@ -58,8 +58,8 @@ const SearchBox = () => {
         <div>
             <h1 className='mt5'>Search the weather</h1>
             <div className='center '>
-                <h2 className="absolute black">{request.error}</h2>
                 <div className='center form pa5 br2 shadow-3'>
+                <h2 id="error">{request.error}</h2>
                     <input
                         onKeyPress={event => {
                             if (event.key === 'Enter') {
