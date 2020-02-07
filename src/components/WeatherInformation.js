@@ -9,7 +9,7 @@ const WeatherInformation = ({ imageUrl, weatherData }) => {
         <div className="mt3 ">
             <h2 className='center'>
             Weather today for {weatherData.name}, {weatherData.sys.country}:</h2>
-            <strong className='f2'>{weatherData.weather[0].main}</strong>
+            <strong className='f3'>{weatherData.weather[0].main}</strong>
             
             <div className='center'>
                 <div className='center weather-box'>
