@@ -1,23 +1,68 @@
-*{
-  margin: 0;
-  padding: 0;
-  
-}
-html, body, #app, #app>div {
-  height: 100%
-}
-body {
-  color: white;
-  font-family: fantasy;
-  background: url('./img/bg.jpeg') ;
-  position: fixed;
-  width: 100%;
+html {
+  background: url(../src/img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
+
+@font-face {
+  font-family: 'Briberra';
+  src: url('../src/font/Briberra.ttf') format('truetype'), 
+  url('../src/font/briberra.woff2') format('woff2'), 
+  url('../src/font/briberra.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Briberra';
+  color: white;
+}
+
 button {
   cursor: pointer;
 }
 
+@media only screen and (max-width:700px) {
+  .about-box p {
+    font-size: 40px;
+  }
+  .about-box h1 {
+    font-size: 60px;
+  }
+  nav {
+    height: 60px;
+  }
+  html {
+    background: url(../src/img/bg-small.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
 
+@media only screen and (max-width:500px) {
+  .about-box {
+    width: 90vw;
+  }
+  .about-box p {
+    font-size: 35px;
+  }
+  nav {
+    height: 50px;
+  }
+  .logo {
+    font-size: 40px;
+  }
+}
 
-
+@media only screen and (min-width:1000px) {
+  .about-box p {
+    font-size: 50px;
+  }
+  .about-box h1 {
+    font-size: 100px;
+  }
+}

@@ -11,7 +11,7 @@ import About from './components/About';
 function App() {
     return (
         <Router>
-        <div className="App background" >
+        <div className="App" >
             <Nav/>
             <Switch/>
             <Route exact path="/"  component={SearchBox} />

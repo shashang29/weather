@@ -12,10 +12,10 @@ const WeatherMap = () => {
 
     return (
         <div className="pa3">
-            <h2>Displaying map for:</h2>
+            <h1>Displaying map for:</h1>
             <div className='center ma2'>
 
-                <select id="types" className="pa5 h2 f5" onChange={handleChange}>
+                <select id="types" className="pa5 h2 f3 pointer" onChange={handleChange}>
                     <option value="">Select a map</option>
                     <option label="Temperature" value="temp_new" />
                     <option label="Clouds" value="clouds_new">Space Type</option>
@@ -25,7 +25,7 @@ const WeatherMap = () => {
                 </select>
 
             </div>
-            <Map className='map center mt2'center={position} zoom={2}  >
+            <Map className='map center mt2' center={position} zoom={2}  >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

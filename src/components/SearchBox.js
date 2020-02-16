@@ -56,7 +56,7 @@ const SearchBox = () => {
 
     return (
         <div>
-            <h1 className='mt5'>Search the weather</h1>
+            <h1 className='mt5 f1'>Search the weather</h1>
             <div className='center '>
                 <div className='center form pa5 br2 shadow-3'>
                 <h2 id="error">{request.error}</h2>
@@ -69,8 +69,8 @@ const SearchBox = () => {
                         onChange={(event => setInput(event.target.value))}
                         type='text'
                         value={input} placeholder='Type your location'
-                        className='pa3 f4 w-70 h-100' />
-                    <button className='tc pa3 grow f4 w-30 link bg-black white pointer' onClick={onSearch}>Search</button>
+                        className='pa3 f2 w-70 h-100' />
+                    <button className='tc pa3 grow f2 w-30 bg-black white pointer' onClick={onSearch}>Search</button>
                 </div>
             </div>
             {request.pending === true ? <h1>Loading...</h1>
