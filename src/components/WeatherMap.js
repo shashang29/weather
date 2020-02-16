@@ -13,9 +13,8 @@ const WeatherMap = () => {
     return (
         <div className="pa3">
             <h1>Displaying map for:</h1>
-            <div className='center ma2'>
-
-                <select id="types" className="pa5 h2 f3 pointer" onChange={handleChange}>
+            <div className='center ma2 '>
+                <select id="types" className="f3 pointer bg-white" onChange={handleChange}>
                     <option value="">Select a map</option>
                     <option label="Temperature" value="temp_new" />
                     <option label="Clouds" value="clouds_new">Space Type</option>
