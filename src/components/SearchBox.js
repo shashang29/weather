@@ -3,7 +3,6 @@ import WeatherInformation from './WeatherInformation';
 
 
 const SearchBox = () => {
-
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [weatherData, setWeatherData] = useState('');

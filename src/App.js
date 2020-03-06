@@ -14,7 +14,7 @@ function App() {
         <Router>
             <div className="App" >
                 <Nav />
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<div className="f1">Loading...</div>}>
                     <Switch />
                     <Route exact path="/" component={SearchBox} />
                     <Route path="/weathermap" component={WeatherMap} />
