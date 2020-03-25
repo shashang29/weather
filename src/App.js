@@ -15,11 +15,11 @@ function App() {
             <div className="App" >
                 <Nav />
                 <Suspense fallback={<div className="f1">Loading...</div>}>
-                    <Switch />
+                    <Switch>
                     <Route exact path="/" component={SearchBox} />
                     <Route path="/weathermap" component={WeatherMap} />
                     <Route path="/about" component={About} />
-                    <Switch />
+                    </Switch>
                 </Suspense>
             </div>
         </Router>
